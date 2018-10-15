@@ -1,0 +1,16 @@
+{
+  "presets": ["es2015", "env", "react"],
+  "plugins": [
+    ["transform-react-jsx"],
+    ["transform-class-properties"],
+    ["transform-object-rest-spread"],
+    ["transform-async-functions"],
+    [
+      "transform-runtime",
+      {
+        "polyfill": true,
+        "regenerator": true
+      }
+    ]
+  ]
+}
