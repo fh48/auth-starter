@@ -14,14 +14,14 @@ export default class Signup extends Component {
     };
   }
 
-  handleSubmit = async (values, {setSubmitting, setErrors}) => {
+  handleSubmit = async (values, {setSubmitting, setFieldError}) => {
     try {
       await register(values.email, values.password);
-      console.log('User has been sucessfully signed up !', values);
       setSubmitting(false);
     } catch (errors) {
       errors.forEach(err => {
         setFieldError(err.field, err.error); // Map errors to fields
+        //https://github.com/jaredpalmer/formik/issues/706
       });
     }
   };
